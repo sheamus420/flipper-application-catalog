@@ -58,8 +58,9 @@ jobs:
         run: >
             python3 ${{ github.workspace }}/tools/build.py \
                 --api $( < .github/.ARCHIVARIUS_URL ) \
-                --bundle-path ${{ inputs.bundle_url }} \
+                --bundle-path ${{ inputs.bundle_url }} \#
+
                 --upload-path ${{ inputs.upload_url }} \
-                --token ${{ secrets.FAST_AUTH_TOKEN }} \
+                --token ${{ secret s.FAST_AUTH_TOKEN }} \
                 --gh-run-id ${{ github.run_id }} \
                 --gh-summary $GITHUB_STEP_SUMMARY ;
